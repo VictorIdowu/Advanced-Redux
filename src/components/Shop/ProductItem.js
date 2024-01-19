@@ -1,9 +1,7 @@
-import Card from '../UI/Card';
-import classes from './ProductItem.module.css';
+import Card from "../UI/Card";
+import classes from "./ProductItem.module.css";
 
-const ProductItem = (props) => {
-  const { title, price, description } = props;
-
+const ProductItem = ({ title, price, description }) => {
   return (
     <li className={classes.item}>
       <Card>
