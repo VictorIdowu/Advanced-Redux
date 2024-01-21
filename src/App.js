@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { uiActions } from "./components/store/ui-slice";
 import Notification from "./components/UI/Notification";
 
+let isInitial = true;
+
 function App() {
   const showCart = useSelector((state) => state.ui.cartIsVisible);
   const cart = useSelector((state) => state.cart);
@@ -53,6 +55,11 @@ function App() {
         );
       }
     };
+
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
 
     postCartData();
   }, [cart, dispatch]);
